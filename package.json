@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "help": "browser-sync start --help",
+    "init": "browser-sync init",
+    "dev": "browser-sync start --server --no-ghost-mode --files *"
+  },
+  "dependencies": {
+    "jsonwebtoken": "^8.5.1"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.26.14"
+  }
+}
