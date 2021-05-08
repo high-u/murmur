@@ -1,31 +1,3 @@
-/*
-- メールアドレス確認用 jwt 案
-
-```json
-{
-  "iss": "murmur",
-  "exp": Math.floor(new Date().getTime() / 1000) + (60 * 5),
-  "sub": "yhiguchi@uhuru.jp",
-  "iat": Math.floor(new Date().getTime() / 1000),
-  "aud": "murmur.com"
-}
-```
-
-作成するもの signup ボタンで呼ばれる Hasura のアクションとそのコール先エンドポイント。
-エンドポイントでは、Hasura の users テーブルに、ユーザを作成。メールアドレス確認フラグは false 。
-jwt の作成と、その jwt を入れたメールの送信。
-
-メール本文中のリンク http://localhost:3001/veirify?token={jwt} を受ける API の作成。
-ここでは、jwt に含まれる情報から、ユーザ情報のメールアドレス確認フラグを true へ。
-レスポンスヘッダーで、ログイン画面へ。
-
-signin ボタンで呼ばれる Hasura のアクションとそのコール先エンドポイント。
-エンドポイントでは、パスワードをハッシュ化し、テーブルの値と比較。
-jwt を生成し、レスポンスする。
-（クライアントは、それを変数に保持する。）
-
-*/
-
 const http = require('http');
 var jwt = require('jsonwebtoken');
 
